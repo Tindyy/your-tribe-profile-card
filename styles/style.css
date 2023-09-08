@@ -1,10 +1,15 @@
 * {
   box-sizing: border-box;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
 }
 
 html {
   height: 100vh;
+  background-color: #483c32;
 }
+
+
+
 
 body {
   display: flex;
@@ -15,7 +20,7 @@ body {
   color: #000000;
 }
 
-article {
+.card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -24,11 +29,13 @@ article {
   width: 50vw;
   max-width: 25em;
   min-width: 20em;
-  border-radius: 1rem;
-  background: rgb(118,150,86);
-  background: linear-gradient(0deg, rgba(238,238,210) 40%, #baca44 100%);
-  box-shadow: 0 0 20px 20px rgba(0,0,0,.1);
-  transition: .25s;
+/* From https://css.glass */
+background: rgba(238, 238, 210, 0.39);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.8px);
+-webkit-backdrop-filter: blur(10.8px);
+border: 1px solid rgba(238, 238, 210, 0.12);
 }
 
 header {
@@ -44,66 +51,15 @@ h1 {
   color: #000000;
 }
 
-button {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: .25rem;
-  border: none;
-  border-radius: 50%;
-  background: rgba(0,239,255,1);
-  transform: scale(.8);
-  transition: .25s;
-}
-button:focus {
-  outline: none;
-  background: #202592;
-}
-button:focus svg {
-  stroke: rgba(0,239,255,1);
-}
-
-svg {
-  position: absolute;
-  top: calc(1.25rem - 12px);
-  left: calc(1.25rem - 12px);
-  stroke: #4e54c8;
-  transition-delay: .25s;
-}
-button svg:nth-of-type(2) {
-  opacity: 0;
-  transition-delay: 0ms;
-}
 
 img {
   position: relative;
   top: 2rem;
-  width: 10em;
-  height: auto;
-  border: 5px solid #fff;
-  border-radius: 10em;
-  box-shadow: 0 0 2px 2px rgba(0,0,0,.2);
+  width: 120px;
+  height: 200px;
   transition: .25s .15s;
 }
 
-dl {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
-    ;
-  justify-items: center;
-  align-items: start;
-  width: 100%;
-  margin-top: -3rem;
-  margin-bottom: 0;
-  padding: 5rem 0 3rem;
-  text-align: center;
-  background: rgb(255,255,255);
-}
 
 dt {
   margin-top: .25rem;
@@ -135,39 +91,14 @@ p {
   margin: 0;
 }
 
-article > p {
+.card > p {
   width: 100%;
   margin-top: 0;
   padding: 3rem 2rem;
-  border-radius: 0 0 1rem 1rem;
+  
   text-align: center;
-  background: rgba(255,255,255, 0.5);
+  background: #eeeed2;
 }
 
 /* expand content */
-body.expand {
-  font-size: 1.15em;
-}
 
-body.expand article {
-  width: 60vw;
-  max-width: 60vw;
-}
-
-body.expand button svg:first-of-type {
-  opacity: 0;
-  transition-delay: 0ms;
-}
-
-body.expand button svg:nth-of-type(2) {
-  opacity: 1;
-  transition-delay: .25s;
-}
-
-body.expand dd {
-  font-size: 1.75em;
-}
-
-body.expand img {
-  width: 15em;
-}
