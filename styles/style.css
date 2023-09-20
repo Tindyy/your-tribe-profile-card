@@ -5,10 +5,10 @@
 
 html {
   height: 100vh;
-  background-color: #483c32;
+  background-color: #fff;
+
+  
 }
-
-
 
 
 body {
@@ -17,11 +17,16 @@ body {
   align-items: center;
   height: 100vh;
   font-family: open sans;
-  color: #000000;
+  color: #e5dad6;
 }
 
+/*------------------*/
+/*------front-------*/
+/*------------------*/
 .card {
   position: relative;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,13 +34,16 @@ body {
   width: 50vw;
   max-width: 25em;
   min-width: 20em;
-/* From https://css.glass */
-background: rgba(238, 238, 210, 0.39);
+  border-radius: 5px;
+  transform: perspective(1000px);
+  transition: "transform 3000ms cubic-bezier(.03,.98,.52,.99)";
 
+/* From https://css.glass */
+background: #2b2937da;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(10.8px);
 -webkit-backdrop-filter: blur(10.8px);
-border: 1px solid rgba(238, 238, 210, 0.12);
+border: 1px solid rgba(238, 238, 210, 1);
 }
 
 header {
@@ -48,16 +56,20 @@ header {
 
 h1 {
   margin: 2rem 0 1rem;
-  color: #000000;
+  color: #c3c9c0;
+  outline: none;
+  border: none;
 }
 
 
 img {
   position: relative;
   top: 2rem;
-  width: 120px;
+  width: auto;
   height: 200px;
   transition: .25s .15s;
+  border: none;
+  outline: none;
 }
 
 
@@ -72,7 +84,7 @@ dt:nth-of-type(1) {
 }
 dt:nth-of-type(2) {
   grid-area: css-dt;
-  transform: translateY(1rem);
+  
 }
 dt:nth-of-type(3) {
   grid-area: js-dt;
@@ -97,7 +109,37 @@ p {
   padding: 3rem 2rem;
   
   text-align: center;
-  background: #eeeed2;
+  background: #cbb570;
+}
+
+/*------------------*/
+/*----cardback------*/
+/*------------------*/
+.cardback{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50vw;
+  max-width: 25em;
+  min-width: 20em;
+  border-radius: 3px;
+ 
+ /* From https://css.glass */
+ background: rgba(238, 238, 210, 0.27);
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(10.8px);
+ -webkit-backdrop-filter: blur(10.8px);
+ border: 1px solid rgba(238, 238, 210,1);
+
+  /*  rotated on start so the front is visible first */
+ transform: rotateY('180deg');
+ backface-visibility: hidden;
+}
+
+.tile.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
 }
 
 /* expand content */
