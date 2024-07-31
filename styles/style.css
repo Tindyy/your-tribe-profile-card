@@ -138,6 +138,8 @@ p {
  backface-visibility: hidden;
 }
 
+/*Transform: translateX() rotateY() to flip tile*/
+
 .tile.is-flipped {
   transform: translateX(-100%) rotateY(-180deg);
 }
